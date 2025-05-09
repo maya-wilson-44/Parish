@@ -269,9 +269,9 @@ elif len(selected_variables) > 2:
     plt.tight_layout()
     st.pyplot(fig)
 
+API_KEY = st.secrets["genai"]["api_key"]
 
-
-client = genai.Client(api_key="AIzaSyAz56zLp5egYUz_2jGNTDYMddJW9KXNu88")
+client = genai.Client(api_key=API_KEY)
 
 # Generate the prompt based on user selections
 if len(selected_variables) == 1:
