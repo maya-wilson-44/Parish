@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
-from google import genai
+from google.generativeai import genai
 import plotly.express as px
 
 
