@@ -271,7 +271,8 @@ elif len(selected_variables) > 2:
 
 API_KEY = st.secrets["genai"]["api_key"]
 
-client = genai.Client(api_key=API_KEY)
+# Configure the Google GenerativeAI client
+genai.configure(api_key=API_KEY)
 
 # Generate the prompt based on user selections
 if len(selected_variables) == 1:
@@ -338,10 +339,8 @@ elif len(selected_variables) > 2:
 
 # Automatically generate the response
 with st.spinner("Generating recommendation..."):
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt
-    )
+    model = genai.GenerativeModel("gemini-pro")  # Use gemini-pro instead of gemini-2.0-flash
+    response = model.generate_content(prompt)
     try:
         response_text = response.text
         # Sometimes the response might include markdown or other formatting
