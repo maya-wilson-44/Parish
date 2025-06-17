@@ -12,7 +12,7 @@ import plotly.express as px
 @st.cache_data
 def load_and_clean_data():
     # Load the data
-    df = pd.read_excel("socioeconomic_2.xlsx")
+    df = pd.read_excel("Socioeconomic_2.xlsx")
   
     # Clean the data
     df = df.rename(columns={" Population (2020)": "Population (2020)"})
