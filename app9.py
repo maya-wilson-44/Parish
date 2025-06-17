@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
-from google.generativeai import genai
+import google.generativeai as genai
 import plotly.express as px
 
 
@@ -339,7 +339,7 @@ elif len(selected_variables) > 2:
 
 # Automatically generate the response
 with st.spinner("Generating recommendation..."):
-    model = genai.GenerativeModel("gemini-pro")  # Use gemini-pro instead of gemini-2.0-flash
+    model = genai.GenerativeModel("gemini-1.5-flash")  # Changed from gemini-pro to gemini-1.5-flash
     response = model.generate_content(prompt)
     try:
         response_text = response.text

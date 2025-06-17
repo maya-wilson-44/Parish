@@ -3,4 +3,5 @@ pandas
 matplotlib
 seaborn
 plotly
-google-generativeai>=0.3.0
+google-generativeai>=0.8.0
+openpyxl
